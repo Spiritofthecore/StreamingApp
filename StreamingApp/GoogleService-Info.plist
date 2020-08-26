@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>39912721937-b6hcs7c1l7ohfcbi77pnebpbqbitkib8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.39912721937-b6hcs7c1l7ohfcbi77pnebpbqbitkib8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDQge9c40RoSUSEicUm6jUbDIzT0tuqK64</string>
+	<key>GCM_SENDER_ID</key>
+	<string>39912721937</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>SpiritofthecoreID.StreamingApp</string>
+	<key>PROJECT_ID</key>
+	<string>fir-rtc-a2921</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-rtc-a2921.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:39912721937:ios:15d2f24396a46b1e3b2bb0</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-rtc-a2921.firebaseio.com</string>
+</dict>
+</plist>

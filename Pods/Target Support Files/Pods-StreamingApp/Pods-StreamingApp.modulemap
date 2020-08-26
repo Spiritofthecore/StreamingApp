@@ -1,0 +1,6 @@
+framework module Pods_StreamingApp {
+  umbrella header "Pods-StreamingApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

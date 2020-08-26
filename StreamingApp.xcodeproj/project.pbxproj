@@ -1,0 +1,826 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AFE1AB6F168369E5CA5DFA5 /* Pods_StreamingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9D77D937F92B47450705B3 /* Pods_StreamingAppTests.framework */; };
+		A327495F847064A85841EC3E /* Pods_StreamingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FD2C2688150A8723EA2B04 /* Pods_StreamingApp.framework */; };
+		A641090F4CCDE039699244DB /* Pods_StreamingApp_StreamingAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABC1ED75604EB4A9CF172E1 /* Pods_StreamingApp_StreamingAppUITests.framework */; };
+		FA20D0F924F252A9005CFFCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D0F824F252A9005CFFCD /* AppDelegate.swift */; };
+		FA20D0FB24F252A9005CFFCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D0FA24F252A9005CFFCD /* SceneDelegate.swift */; };
+		FA20D0FD24F252A9005CFFCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D0FC24F252A9005CFFCD /* ViewController.swift */; };
+		FA20D10024F252A9005CFFCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA20D0FE24F252A9005CFFCD /* Main.storyboard */; };
+		FA20D10224F252A9005CFFCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D10124F252A9005CFFCD /* ContentView.swift */; };
+		FA20D10424F252AE005CFFCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA20D10324F252AE005CFFCD /* Assets.xcassets */; };
+		FA20D10724F252AE005CFFCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA20D10524F252AE005CFFCD /* LaunchScreen.storyboard */; };
+		FA20D11224F252AF005CFFCD /* StreamingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D11124F252AF005CFFCD /* StreamingAppTests.swift */; };
+		FA20D11D24F252AF005CFFCD /* StreamingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D11C24F252AF005CFFCD /* StreamingAppUITests.swift */; };
+		FA20D12D24F26CC6005CFFCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA20D12C24F26CC6005CFFCD /* GoogleService-Info.plist */; };
+		FA6ED9B124F50A0B002EC942 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6ED9B024F50A0B002EC942 /* Config.swift */; };
+		FADB63AB24F6A8F2006464A3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63A424F6A8F2006464A3 /* Message.swift */; };
+		FADB63AC24F6A8F2006464A3 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63A624F6A8F2006464A3 /* WebSocketProvider.swift */; };
+		FADB63AD24F6A8F2006464A3 /* NativeWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63A724F6A8F2006464A3 /* NativeWebSocket.swift */; };
+		FADB63AE24F6A8F2006464A3 /* StarscreamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63A824F6A8F2006464A3 /* StarscreamProvider.swift */; };
+		FADB63AF24F6A8F2006464A3 /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63A924F6A8F2006464A3 /* WebRTCClient.swift */; };
+		FADB63B024F6A8F2006464A3 /* SignalingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63AA24F6A8F2006464A3 /* SignalingClient.swift */; };
+		FADB63B524F6AE31006464A3 /* RTCStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63B224F6AE31006464A3 /* RTCStates.swift */; };
+		FADB63B624F6AE31006464A3 /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63B324F6AE31006464A3 /* SessionDescription.swift */; };
+		FADB63B724F6AE31006464A3 /* IceCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63B424F6AE31006464A3 /* IceCandidate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA20D10E24F252AF005CFFCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA20D0ED24F252A8005CFFCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA20D0F424F252A8005CFFCD;
+			remoteInfo = StreamingApp;
+		};
+		FA20D11924F252AF005CFFCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA20D0ED24F252A8005CFFCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA20D0F424F252A8005CFFCD;
+			remoteInfo = StreamingApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16FD2C2688150A8723EA2B04 /* Pods_StreamingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C9D77D937F92B47450705B3 /* Pods_StreamingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		287E76A32099D12945C0CFCC /* Pods-StreamingAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StreamingAppTests/Pods-StreamingAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		39538E5980B50EE2040FB8C6 /* Pods-StreamingApp-StreamingAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingApp-StreamingAppUITests.release.xcconfig"; path = "Target Support Files/Pods-StreamingApp-StreamingAppUITests/Pods-StreamingApp-StreamingAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3C7F380D7E7A170BFDFCCF2C /* Pods-StreamingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingAppTests.release.xcconfig"; path = "Target Support Files/Pods-StreamingAppTests/Pods-StreamingAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		50017A044D53F02ECF65C77B /* Pods-StreamingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingApp.release.xcconfig"; path = "Target Support Files/Pods-StreamingApp/Pods-StreamingApp.release.xcconfig"; sourceTree = "<group>"; };
+		5ABC1ED75604EB4A9CF172E1 /* Pods_StreamingApp_StreamingAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamingApp_StreamingAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C9F670053E43AA5D192109 /* Pods-StreamingApp-StreamingAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingApp-StreamingAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StreamingApp-StreamingAppUITests/Pods-StreamingApp-StreamingAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE6EC5737CB9E6A7305F9679 /* Pods-StreamingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamingApp.debug.xcconfig"; path = "Target Support Files/Pods-StreamingApp/Pods-StreamingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FA20D0F524F252A9005CFFCD /* StreamingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA20D0F824F252A9005CFFCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA20D0FA24F252A9005CFFCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA20D0FC24F252A9005CFFCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA20D0FF24F252A9005CFFCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA20D10124F252A9005CFFCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA20D10324F252AE005CFFCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA20D10624F252AE005CFFCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA20D10824F252AE005CFFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA20D10D24F252AF005CFFCD /* StreamingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA20D11124F252AF005CFFCD /* StreamingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingAppTests.swift; sourceTree = "<group>"; };
+		FA20D11324F252AF005CFFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA20D11824F252AF005CFFCD /* StreamingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA20D11C24F252AF005CFFCD /* StreamingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingAppUITests.swift; sourceTree = "<group>"; };
+		FA20D11E24F252AF005CFFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA20D12C24F26CC6005CFFCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA6ED9B024F50A0B002EC942 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FADB63A424F6A8F2006464A3 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FADB63A624F6A8F2006464A3 /* WebSocketProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		FADB63A724F6A8F2006464A3 /* NativeWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeWebSocket.swift; sourceTree = "<group>"; };
+		FADB63A824F6A8F2006464A3 /* StarscreamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarscreamProvider.swift; sourceTree = "<group>"; };
+		FADB63A924F6A8F2006464A3 /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
+		FADB63AA24F6A8F2006464A3 /* SignalingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingClient.swift; sourceTree = "<group>"; };
+		FADB63B224F6AE31006464A3 /* RTCStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCStates.swift; sourceTree = "<group>"; };
+		FADB63B324F6AE31006464A3 /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDescription.swift; sourceTree = "<group>"; };
+		FADB63B424F6AE31006464A3 /* IceCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCandidate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA20D0F224F252A8005CFFCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A327495F847064A85841EC3E /* Pods_StreamingApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA20D10A24F252AF005CFFCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFE1AB6F168369E5CA5DFA5 /* Pods_StreamingAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA20D11524F252AF005CFFCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A641090F4CCDE039699244DB /* Pods_StreamingApp_StreamingAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C0A6F6859DF247D8671BDA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16FD2C2688150A8723EA2B04 /* Pods_StreamingApp.framework */,
+				5ABC1ED75604EB4A9CF172E1 /* Pods_StreamingApp_StreamingAppUITests.framework */,
+				1C9D77D937F92B47450705B3 /* Pods_StreamingAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC069CC1FFB17064224E977C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE6EC5737CB9E6A7305F9679 /* Pods-StreamingApp.debug.xcconfig */,
+				50017A044D53F02ECF65C77B /* Pods-StreamingApp.release.xcconfig */,
+				A8C9F670053E43AA5D192109 /* Pods-StreamingApp-StreamingAppUITests.debug.xcconfig */,
+				39538E5980B50EE2040FB8C6 /* Pods-StreamingApp-StreamingAppUITests.release.xcconfig */,
+				287E76A32099D12945C0CFCC /* Pods-StreamingAppTests.debug.xcconfig */,
+				3C7F380D7E7A170BFDFCCF2C /* Pods-StreamingAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA20D0EC24F252A8005CFFCD = {
+			isa = PBXGroup;
+			children = (
+				FA20D0F724F252A9005CFFCD /* StreamingApp */,
+				FA20D11024F252AF005CFFCD /* StreamingAppTests */,
+				FA20D11B24F252AF005CFFCD /* StreamingAppUITests */,
+				FA20D0F624F252A9005CFFCD /* Products */,
+				EC069CC1FFB17064224E977C /* Pods */,
+				7C0A6F6859DF247D8671BDA7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA20D0F624F252A9005CFFCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA20D0F524F252A9005CFFCD /* StreamingApp.app */,
+				FA20D10D24F252AF005CFFCD /* StreamingAppTests.xctest */,
+				FA20D11824F252AF005CFFCD /* StreamingAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA20D0F724F252A9005CFFCD /* StreamingApp */ = {
+			isa = PBXGroup;
+			children = (
+				FADB63B124F6AE31006464A3 /* Extensions */,
+				FADB63A324F6A8F2006464A3 /* Services */,
+				FA20D12C24F26CC6005CFFCD /* GoogleService-Info.plist */,
+				FA20D0F824F252A9005CFFCD /* AppDelegate.swift */,
+				FA20D0FA24F252A9005CFFCD /* SceneDelegate.swift */,
+				FA20D0FC24F252A9005CFFCD /* ViewController.swift */,
+				FA20D0FE24F252A9005CFFCD /* Main.storyboard */,
+				FA20D10124F252A9005CFFCD /* ContentView.swift */,
+				FA20D10324F252AE005CFFCD /* Assets.xcassets */,
+				FA20D10524F252AE005CFFCD /* LaunchScreen.storyboard */,
+				FA20D10824F252AE005CFFCD /* Info.plist */,
+				FA6ED9B024F50A0B002EC942 /* Config.swift */,
+			);
+			path = StreamingApp;
+			sourceTree = "<group>";
+		};
+		FA20D11024F252AF005CFFCD /* StreamingAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA20D11124F252AF005CFFCD /* StreamingAppTests.swift */,
+				FA20D11324F252AF005CFFCD /* Info.plist */,
+			);
+			path = StreamingAppTests;
+			sourceTree = "<group>";
+		};
+		FA20D11B24F252AF005CFFCD /* StreamingAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA20D11C24F252AF005CFFCD /* StreamingAppUITests.swift */,
+				FA20D11E24F252AF005CFFCD /* Info.plist */,
+			);
+			path = StreamingAppUITests;
+			sourceTree = "<group>";
+		};
+		FADB63A324F6A8F2006464A3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FADB63A424F6A8F2006464A3 /* Message.swift */,
+				FADB63A524F6A8F2006464A3 /* WebSocketProvider */,
+				FADB63A924F6A8F2006464A3 /* WebRTCClient.swift */,
+				FADB63AA24F6A8F2006464A3 /* SignalingClient.swift */,
+			);
+			name = Services;
+			path = "../../WebRTC-iOS/WebRTC-Demo-App/Sources/Services";
+			sourceTree = "<group>";
+		};
+		FADB63A524F6A8F2006464A3 /* WebSocketProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FADB63A624F6A8F2006464A3 /* WebSocketProvider.swift */,
+				FADB63A724F6A8F2006464A3 /* NativeWebSocket.swift */,
+				FADB63A824F6A8F2006464A3 /* StarscreamProvider.swift */,
+			);
+			path = WebSocketProvider;
+			sourceTree = "<group>";
+		};
+		FADB63B124F6AE31006464A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FADB63B224F6AE31006464A3 /* RTCStates.swift */,
+				FADB63B324F6AE31006464A3 /* SessionDescription.swift */,
+				FADB63B424F6AE31006464A3 /* IceCandidate.swift */,
+			);
+			name = Extensions;
+			path = "../../WebRTC-iOS/WebRTC-Demo-App/Sources/Extensions";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA20D0F424F252A8005CFFCD /* StreamingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA20D12124F252AF005CFFCD /* Build configuration list for PBXNativeTarget "StreamingApp" */;
+			buildPhases = (
+				5699DAD299F8C9B17F041DAB /* [CP] Check Pods Manifest.lock */,
+				FA20D0F124F252A8005CFFCD /* Sources */,
+				FA20D0F224F252A8005CFFCD /* Frameworks */,
+				FA20D0F324F252A8005CFFCD /* Resources */,
+				801AF346A4759153E0A1DD2C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StreamingApp;
+			productName = StreamingApp;
+			productReference = FA20D0F524F252A9005CFFCD /* StreamingApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA20D10C24F252AF005CFFCD /* StreamingAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA20D12424F252AF005CFFCD /* Build configuration list for PBXNativeTarget "StreamingAppTests" */;
+			buildPhases = (
+				C4A4AB3B2238ED06616DF1F7 /* [CP] Check Pods Manifest.lock */,
+				FA20D10924F252AF005CFFCD /* Sources */,
+				FA20D10A24F252AF005CFFCD /* Frameworks */,
+				FA20D10B24F252AF005CFFCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA20D10F24F252AF005CFFCD /* PBXTargetDependency */,
+			);
+			name = StreamingAppTests;
+			productName = StreamingAppTests;
+			productReference = FA20D10D24F252AF005CFFCD /* StreamingAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA20D11724F252AF005CFFCD /* StreamingAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA20D12724F252AF005CFFCD /* Build configuration list for PBXNativeTarget "StreamingAppUITests" */;
+			buildPhases = (
+				157D5ABB536DEFD72366BE20 /* [CP] Check Pods Manifest.lock */,
+				FA20D11424F252AF005CFFCD /* Sources */,
+				FA20D11524F252AF005CFFCD /* Frameworks */,
+				FA20D11624F252AF005CFFCD /* Resources */,
+				F120AD914482B217BB6D8441 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA20D11A24F252AF005CFFCD /* PBXTargetDependency */,
+			);
+			name = StreamingAppUITests;
+			productName = StreamingAppUITests;
+			productReference = FA20D11824F252AF005CFFCD /* StreamingAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA20D0ED24F252A8005CFFCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					FA20D0F424F252A8005CFFCD = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					FA20D10C24F252AF005CFFCD = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = FA20D0F424F252A8005CFFCD;
+					};
+					FA20D11724F252AF005CFFCD = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = FA20D0F424F252A8005CFFCD;
+					};
+				};
+			};
+			buildConfigurationList = FA20D0F024F252A8005CFFCD /* Build configuration list for PBXProject "StreamingApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA20D0EC24F252A8005CFFCD;
+			productRefGroup = FA20D0F624F252A9005CFFCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA20D0F424F252A8005CFFCD /* StreamingApp */,
+				FA20D10C24F252AF005CFFCD /* StreamingAppTests */,
+				FA20D11724F252AF005CFFCD /* StreamingAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA20D0F324F252A8005CFFCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA20D10724F252AE005CFFCD /* LaunchScreen.storyboard in Resources */,
+				FA20D12D24F26CC6005CFFCD /* GoogleService-Info.plist in Resources */,
+				FA20D10424F252AE005CFFCD /* Assets.xcassets in Resources */,
+				FA20D10024F252A9005CFFCD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA20D10B24F252AF005CFFCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA20D11624F252AF005CFFCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		157D5ABB536DEFD72366BE20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreamingApp-StreamingAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5699DAD299F8C9B17F041DAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreamingApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		801AF346A4759153E0A1DD2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreamingApp/Pods-StreamingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreamingApp/Pods-StreamingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StreamingApp/Pods-StreamingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4A4AB3B2238ED06616DF1F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreamingAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F120AD914482B217BB6D8441 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreamingApp-StreamingAppUITests/Pods-StreamingApp-StreamingAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StreamingApp-StreamingAppUITests/Pods-StreamingApp-StreamingAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StreamingApp-StreamingAppUITests/Pods-StreamingApp-StreamingAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA20D0F124F252A8005CFFCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FADB63AE24F6A8F2006464A3 /* StarscreamProvider.swift in Sources */,
+				FADB63AF24F6A8F2006464A3 /* WebRTCClient.swift in Sources */,
+				FA20D0FD24F252A9005CFFCD /* ViewController.swift in Sources */,
+				FADB63B524F6AE31006464A3 /* RTCStates.swift in Sources */,
+				FA20D0F924F252A9005CFFCD /* AppDelegate.swift in Sources */,
+				FA6ED9B124F50A0B002EC942 /* Config.swift in Sources */,
+				FADB63B624F6AE31006464A3 /* SessionDescription.swift in Sources */,
+				FADB63B724F6AE31006464A3 /* IceCandidate.swift in Sources */,
+				FADB63B024F6A8F2006464A3 /* SignalingClient.swift in Sources */,
+				FADB63AC24F6A8F2006464A3 /* WebSocketProvider.swift in Sources */,
+				FADB63AB24F6A8F2006464A3 /* Message.swift in Sources */,
+				FA20D10224F252A9005CFFCD /* ContentView.swift in Sources */,
+				FADB63AD24F6A8F2006464A3 /* NativeWebSocket.swift in Sources */,
+				FA20D0FB24F252A9005CFFCD /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA20D10924F252AF005CFFCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA20D11224F252AF005CFFCD /* StreamingAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA20D11424F252AF005CFFCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA20D11D24F252AF005CFFCD /* StreamingAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA20D10F24F252AF005CFFCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA20D0F424F252A8005CFFCD /* StreamingApp */;
+			targetProxy = FA20D10E24F252AF005CFFCD /* PBXContainerItemProxy */;
+		};
+		FA20D11A24F252AF005CFFCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA20D0F424F252A8005CFFCD /* StreamingApp */;
+			targetProxy = FA20D11924F252AF005CFFCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA20D0FE24F252A9005CFFCD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA20D0FF24F252A9005CFFCD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA20D10524F252AE005CFFCD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA20D10624F252AE005CFFCD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA20D11F24F252AF005CFFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA20D12024F252AF005CFFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA20D12224F252AF005CFFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE6EC5737CB9E6A7305F9679 /* Pods-StreamingApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S95TJK6274;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = StreamingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SpiritofthecoreID.StreamingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA20D12324F252AF005CFFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50017A044D53F02ECF65C77B /* Pods-StreamingApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S95TJK6274;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = StreamingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SpiritofthecoreID.StreamingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA20D12524F252AF005CFFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 287E76A32099D12945C0CFCC /* Pods-StreamingAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StreamingAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SpiritofthecoreID.StreamingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamingApp.app/StreamingApp";
+			};
+			name = Debug;
+		};
+		FA20D12624F252AF005CFFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C7F380D7E7A170BFDFCCF2C /* Pods-StreamingAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StreamingAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SpiritofthecoreID.StreamingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamingApp.app/StreamingApp";
+			};
+			name = Release;
+		};
+		FA20D12824F252AF005CFFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8C9F670053E43AA5D192109 /* Pods-StreamingApp-StreamingAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StreamingAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SpiritofthecoreID.StreamingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StreamingApp;
+			};
+			name = Debug;
+		};
+		FA20D12924F252AF005CFFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39538E5980B50EE2040FB8C6 /* Pods-StreamingApp-StreamingAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StreamingAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SpiritofthecoreID.StreamingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StreamingApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA20D0F024F252A8005CFFCD /* Build configuration list for PBXProject "StreamingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA20D11F24F252AF005CFFCD /* Debug */,
+				FA20D12024F252AF005CFFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA20D12124F252AF005CFFCD /* Build configuration list for PBXNativeTarget "StreamingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA20D12224F252AF005CFFCD /* Debug */,
+				FA20D12324F252AF005CFFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA20D12424F252AF005CFFCD /* Build configuration list for PBXNativeTarget "StreamingAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA20D12524F252AF005CFFCD /* Debug */,
+				FA20D12624F252AF005CFFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA20D12724F252AF005CFFCD /* Build configuration list for PBXNativeTarget "StreamingAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA20D12824F252AF005CFFCD /* Debug */,
+				FA20D12924F252AF005CFFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA20D0ED24F252A8005CFFCD /* Project object */;
+}
