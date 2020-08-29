@@ -17,33 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kd-G9-DlA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kd-G9-DlA">
                                 <rect key="frame" x="20" y="44" width="192" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Open camera &amp; microphone"/>
                                 <connections>
                                     <action selector="openCam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVD-dD-u5G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYM-JN-Dcm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYM-JN-Dcm">
                                 <rect key="frame" x="20" y="82" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create room"/>
                                 <connections>
                                     <action selector="createRoom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SDA-e9-xas"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs3-Hi-ZGE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs3-Hi-ZGE">
                                 <rect key="frame" x="20" y="120" width="68" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Join room"/>
                                 <connections>
                                     <action selector="joinRoom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LhZ-vY-EK8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g2-ok-fiF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2g2-ok-fiF">
                                 <rect key="frame" x="20" y="158" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Hang Up"/>
                                 <connections>
                                     <action selector="hangUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qaR-5R-wDa"/>
@@ -53,13 +49,29 @@
                                 <rect key="frame" x="261" y="668" width="138" height="179"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-tL-DR2">
+                                <rect key="frame" x="20" y="196" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5Kd-G9-DlA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2O6-yP-kSo"/>
                             <constraint firstItem="xeZ-UG-l6Q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/5" id="B2k-Cm-ctw"/>
+                            <constraint firstItem="uV4-tL-DR2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Dma-sa-5eN"/>
+                            <constraint firstItem="uV4-tL-DR2" firstAttribute="top" secondItem="2g2-ok-fiF" secondAttribute="bottom" constant="8" symbolic="YES" id="HL2-3h-2Mf"/>
+                            <constraint firstItem="2g2-ok-fiF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HaI-si-zZi"/>
+                            <constraint firstItem="Vs3-Hi-ZGE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OqF-tk-Mxi"/>
+                            <constraint firstItem="2g2-ok-fiF" firstAttribute="top" secondItem="Vs3-Hi-ZGE" secondAttribute="bottom" constant="8" symbolic="YES" id="OwX-af-TR0"/>
+                            <constraint firstItem="5Kd-G9-DlA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="T6l-cK-Fbe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xeZ-UG-l6Q" secondAttribute="trailing" constant="15" id="V64-kt-3eX"/>
+                            <constraint firstItem="aYM-JN-Dcm" firstAttribute="top" secondItem="5Kd-G9-DlA" secondAttribute="bottom" constant="8" symbolic="YES" id="aVY-Yt-o6p"/>
+                            <constraint firstItem="aYM-JN-Dcm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eDZ-5V-Ggm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xeZ-UG-l6Q" secondAttribute="bottom" constant="15" id="k6e-3n-Wcl"/>
+                            <constraint firstItem="Vs3-Hi-ZGE" firstAttribute="top" secondItem="aYM-JN-Dcm" secondAttribute="bottom" constant="8" symbolic="YES" id="keX-fc-hZZ"/>
                             <constraint firstItem="xeZ-UG-l6Q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/3" id="wDX-MK-ux8"/>
                         </constraints>
                     </view>
@@ -69,6 +81,7 @@
                         <outlet property="joinRoomBtn" destination="Vs3-Hi-ZGE" id="ox2-Wq-BhE"/>
                         <outlet property="localVideoView" destination="xeZ-UG-l6Q" id="op1-ve-ulc"/>
                         <outlet property="openCamBtn" destination="5Kd-G9-DlA" id="sKc-KN-Jcs"/>
+                        <outlet property="roomIdLbl" destination="uV4-tL-DR2" id="vPJ-gK-6BK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

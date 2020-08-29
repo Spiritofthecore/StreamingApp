@@ -12,7 +12,7 @@ import WebRTC
 
 class ViewController: UIViewController {
     
-    let webRTCClient = WebRTCClient(iceServers: defaultIceServers)
+    var webRTCClient = WebRTCClient(iceServers: defaultIceServers)
     var localStream: AnyObject?
     var remoteStream: AnyObject?
     var roomRef: DocumentReference?
@@ -189,12 +189,36 @@ class ViewController: UIViewController {
     
     @IBAction func hangUp(_ sender: Any) {
         // TODO: stop tracks and close peerConnection
-        self.webRTCClient.hideVideo()
-        
+        self.webRTCClient = WebRTCClient(iceServers: defaultIceServers)
         
         // TODO: enable camerabtn, disable the rest
+        openCamBtn.isEnabled = true
+        createRoomBtn.isEnabled = false
+        joinRoomBtn.isEnabled = false
+        hangUpBtn.isEnabled = false
 
         // TODO: delele room on firestore
+        if (roomIDRef != nil) {
+            roomIDRef?.collection("calleeCandidates").getDocuments(completion: { (snapshot, error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                snapshot?.documents.forEach({ (snapshot) in
+                    snapshot.reference.delete()
+                })
+            })
+            roomIDRef?.collection("callerCandidates").getDocuments(completion: { (snapshot, error) in
+                if let error = error {
+                    print(error)
+                    return
+                }
+                snapshot?.documents.forEach({ (snapshot) in
+                    snapshot.reference.delete()
+                })
+            })
+            roomIDRef?.delete()
+        }
     }
     
     override func viewDidLoad() {
