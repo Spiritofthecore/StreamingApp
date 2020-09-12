@@ -49,12 +49,15 @@
                                 <rect key="frame" x="261" y="668" width="138" height="179"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-tL-DR2">
-                                <rect key="frame" x="20" y="196" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uV4-tL-DR2">
+                                <rect key="frame" x="20" y="196" width="379" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pXz-IN-Pup">
+                                <rect key="frame" x="143" y="384" width="128" height="128"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,14 +67,17 @@
                             <constraint firstItem="uV4-tL-DR2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Dma-sa-5eN"/>
                             <constraint firstItem="uV4-tL-DR2" firstAttribute="top" secondItem="2g2-ok-fiF" secondAttribute="bottom" constant="8" symbolic="YES" id="HL2-3h-2Mf"/>
                             <constraint firstItem="2g2-ok-fiF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HaI-si-zZi"/>
+                            <constraint firstItem="pXz-IN-Pup" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ni7-DQ-sCy"/>
                             <constraint firstItem="Vs3-Hi-ZGE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OqF-tk-Mxi"/>
                             <constraint firstItem="2g2-ok-fiF" firstAttribute="top" secondItem="Vs3-Hi-ZGE" secondAttribute="bottom" constant="8" symbolic="YES" id="OwX-af-TR0"/>
                             <constraint firstItem="5Kd-G9-DlA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="T6l-cK-Fbe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xeZ-UG-l6Q" secondAttribute="trailing" constant="15" id="V64-kt-3eX"/>
+                            <constraint firstItem="pXz-IN-Pup" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Z5I-gG-40Y"/>
                             <constraint firstItem="aYM-JN-Dcm" firstAttribute="top" secondItem="5Kd-G9-DlA" secondAttribute="bottom" constant="8" symbolic="YES" id="aVY-Yt-o6p"/>
                             <constraint firstItem="aYM-JN-Dcm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eDZ-5V-Ggm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xeZ-UG-l6Q" secondAttribute="bottom" constant="15" id="k6e-3n-Wcl"/>
                             <constraint firstItem="Vs3-Hi-ZGE" firstAttribute="top" secondItem="aYM-JN-Dcm" secondAttribute="bottom" constant="8" symbolic="YES" id="keX-fc-hZZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uV4-tL-DR2" secondAttribute="trailing" constant="15" id="u84-Zd-3CM"/>
                             <constraint firstItem="xeZ-UG-l6Q" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/3" id="wDX-MK-ux8"/>
                         </constraints>
                     </view>
@@ -81,6 +87,7 @@
                         <outlet property="joinRoomBtn" destination="Vs3-Hi-ZGE" id="ox2-Wq-BhE"/>
                         <outlet property="localVideoView" destination="xeZ-UG-l6Q" id="op1-ve-ulc"/>
                         <outlet property="openCamBtn" destination="5Kd-G9-DlA" id="sKc-KN-Jcs"/>
+                        <outlet property="placeholder" destination="pXz-IN-Pup" id="YaC-3M-Bwp"/>
                         <outlet property="roomIdLbl" destination="uV4-tL-DR2" id="vPJ-gK-6BK"/>
                     </connections>
                 </viewController>
@@ -90,6 +97,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="placeholder" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

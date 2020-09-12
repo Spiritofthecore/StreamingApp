@@ -12,12 +12,27 @@ import WebRTC
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var placeholder: UIImageView!
     var webRTCClient = WebRTCClient(iceServers: defaultIceServers)
     var localStream: AnyObject?
     var remoteStream: AnyObject?
     var roomRef: DocumentReference?
     var roomIDRef: DocumentReference?
+    var localRenderer: RTCMTLVideoView?
+    var remoteRenderer: RTCMTLVideoView?
     var isCaller: Bool?
+    var isHideBtn: Bool = false {
+        didSet {
+            UIView.animate(withDuration: 1) { [weak self] in
+                guard let self = self else { return }
+                self.openCamBtn.isHidden = self.isHideBtn
+                self.createRoomBtn.isHidden = self.isHideBtn
+                self.joinRoomBtn.isHidden = self.isHideBtn
+                self.hangUpBtn.isHidden = self.isHideBtn
+                self.roomIdLbl.isHidden = self.isHideBtn
+            }
+        }
+    }
     @IBOutlet weak var localVideoView: UIView!
     @IBOutlet weak var openCamBtn: UIButton!
     @IBOutlet weak var createRoomBtn: UIButton!
@@ -30,24 +45,24 @@ class ViewController: UIViewController {
         
         #if arch(arm64)
             // Using metal (arm64 only)
-            let localRenderer = RTCMTLVideoView(frame: self.localVideoView?.frame ?? CGRect.zero)
-            let remoteRenderer = RTCMTLVideoView(frame: self.view.frame)
-            localRenderer.videoContentMode = .scaleAspectFill
-            remoteRenderer.videoContentMode = .scaleAspectFill
+            localRenderer = RTCMTLVideoView(frame: self.localVideoView?.frame ?? CGRect.zero)
+            remoteRenderer = RTCMTLVideoView(frame: self.view.frame)
+            localRenderer!.videoContentMode = .scaleAspectFill
+            remoteRenderer!.videoContentMode = .scaleAspectFill
         #else
             // Using OpenGLES for the rest
-            let localRenderer = RTCEAGLVideoView(frame: self.localVideoView?.frame ?? CGRect.zero)
-            let remoteRenderer = RTCEAGLVideoView(frame: self.view.frame)
+            localRenderer = RTCEAGLVideoView(frame: self.localVideoView?.frame ?? CGRect.zero)
+            remoteRenderer = RTCEAGLVideoView(frame: self.view.frame)
         #endif
 
-        self.webRTCClient.startCaptureLocalVideo(renderer: localRenderer)
-        self.webRTCClient.renderRemoteVideo(to: remoteRenderer)
+        self.webRTCClient.startCaptureLocalVideo(renderer: localRenderer!)
+        self.webRTCClient.renderRemoteVideo(to: remoteRenderer!)
         
         if let localVideoView = self.localVideoView {
-            self.embedView(localRenderer, into: localVideoView)
+            self.embedView(localRenderer!, into: localVideoView)
         }
-        self.embedView(remoteRenderer, into: self.view)
-        self.view.sendSubviewToBack(remoteRenderer)
+        self.embedView(remoteRenderer!, into: self.view)
+        self.view.sendSubviewToBack(remoteRenderer!)
         
         // TODO: disable openCam btn
         openCamBtn.isEnabled = false
@@ -85,8 +100,10 @@ class ViewController: UIViewController {
                     print(error)
                     return
                 }
-                self?.roomIdLbl.isHidden = false
-                self?.roomIdLbl.text = "Current room is \(roomRef.documentID) - You are the caller!"
+                DispatchQueue.main.async {
+                    self?.roomIdLbl.isHidden = false
+                    self?.roomIdLbl.text = "Current room is \(roomRef.documentID) - You are the caller!"
+                }
             }
         }
         
@@ -99,10 +116,14 @@ class ViewController: UIViewController {
             guard let answer = data["answer"] as? [String: Any] else { return }
             guard let sdp = answer["sdp"] as? String else { return }
             
-            self.webRTCClient.set(remoteSdp: RTCSessionDescription(type: .answer, sdp: sdp)) { error in
+            self.webRTCClient.set(remoteSdp: RTCSessionDescription(type: .answer, sdp: sdp)) { [weak self] error in
                 if let error = error {
                     print(error)
                     return
+                }
+                DispatchQueue.main.async {
+                    self?.isHideBtn = true
+                    self?.placeholder.isHidden = true
                 }
             }
         })
@@ -120,10 +141,10 @@ class ViewController: UIViewController {
     }
     
     func showAlertGetRoomID(completion: @escaping (String?) -> ()) {
-        let alert = UIAlertController(title: "Some Title", message: "Enter a text", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Join to a room", message: "Enter your room ID", preferredStyle: .alert)
 
         alert.addTextField { (textField) in
-            textField.text = "Some default text"
+            textField.text = "Room ID"
         }
 
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
@@ -154,10 +175,15 @@ class ViewController: UIViewController {
                 guard let offer = data["offer"] as? [String: Any] else { return }
                 guard let sdp = offer["sdp"] as? String else { return }
                 
-                self?.webRTCClient.set(remoteSdp: RTCSessionDescription(type: .offer, sdp: sdp), completion: { error in
+                self?.webRTCClient.set(remoteSdp: RTCSessionDescription(type: .offer, sdp: sdp), completion: { [weak self] error in
                     if let error = error {
                         print(error)
                         return
+                    }
+                    DispatchQueue.main.async {
+                        self?.isHideBtn = true
+                        self?.placeholder.isHidden = true
+                        self?.roomIdLbl.text = "Current room is \(roomID!) - You are the callee!"
                     }
                 })
 
@@ -190,12 +216,21 @@ class ViewController: UIViewController {
     @IBAction func hangUp(_ sender: Any) {
         // TODO: stop tracks and close peerConnection
         self.webRTCClient = WebRTCClient(iceServers: defaultIceServers)
+        self.placeholder.isHidden = false
         
         // TODO: enable camerabtn, disable the rest
         openCamBtn.isEnabled = true
         createRoomBtn.isEnabled = false
         joinRoomBtn.isEnabled = false
         hangUpBtn.isEnabled = false
+        roomIdLbl.isHidden = true
+        
+        if localRenderer != nil {
+            localRenderer?.removeFromSuperview()
+        }
+        if remoteRenderer != nil {
+            remoteRenderer?.removeFromSuperview()
+        }
 
         // TODO: delele room on firestore
         if (roomIDRef != nil) {
@@ -234,6 +269,14 @@ class ViewController: UIViewController {
         webRTCClient.delegate = self
         
         roomRef = Firestore.firestore().collection("rooms").document()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapVideo))
+        tapGesture.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func tapVideo() {
+        self.isHideBtn.toggle()
     }
 }
 
@@ -251,7 +294,23 @@ extension ViewController: WebRTCClientDelegate {
     }
     
     func webRTCClient(_ client: WebRTCClient, didChangeConnectionState state: RTCIceConnectionState) {
-        print("didChangeConnectionState")
+        var message: String?
+        switch state {
+        case .disconnected:
+            message = "Hang up"
+        case .failed, .closed:
+            message = "Can not connect"
+        default:
+            break
+        }
+        guard let messageE = message else { return }
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: messageE, message: "", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func webRTCClient(_ client: WebRTCClient, didReceiveData data: Data) {
