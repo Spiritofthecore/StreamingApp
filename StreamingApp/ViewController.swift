@@ -43,17 +43,10 @@ class ViewController: UIViewController {
     @IBAction func openCam(_ sender: Any) {
         // TODO: get local stream and show on small view
         
-        #if arch(arm64)
-            // Using metal (arm64 only)
-            localRenderer = RTCMTLVideoView(frame: self.localVideoView?.frame ?? CGRect.zero)
-            remoteRenderer = RTCMTLVideoView(frame: self.view.frame)
-            localRenderer!.videoContentMode = .scaleAspectFill
-            remoteRenderer!.videoContentMode = .scaleAspectFill
-        #else
-            // Using OpenGLES for the rest
-            localRenderer = RTCEAGLVideoView(frame: self.localVideoView?.frame ?? CGRect.zero)
-            remoteRenderer = RTCEAGLVideoView(frame: self.view.frame)
-        #endif
+        localRenderer = RTCMTLVideoView(frame: self.localVideoView?.frame ?? CGRect.zero)
+        remoteRenderer = RTCMTLVideoView(frame: self.view.frame)
+        localRenderer!.videoContentMode = .scaleAspectFill
+        remoteRenderer!.videoContentMode = .scaleAspectFill
 
         self.webRTCClient.startCaptureLocalVideo(renderer: localRenderer!)
         self.webRTCClient.renderRemoteVideo(to: remoteRenderer!)

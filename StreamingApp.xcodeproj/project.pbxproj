@@ -20,11 +20,11 @@
 		FA20D11224F252AF005CFFCD /* StreamingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D11124F252AF005CFFCD /* StreamingAppTests.swift */; };
 		FA20D11D24F252AF005CFFCD /* StreamingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20D11C24F252AF005CFFCD /* StreamingAppUITests.swift */; };
 		FA20D12D24F26CC6005CFFCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA20D12C24F26CC6005CFFCD /* GoogleService-Info.plist */; };
+		FA36B725250D091D00549577 /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36B720250D091D00549577 /* WebRTCClient.swift */; };
+		FA36B726250D091D00549577 /* RTCStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36B722250D091D00549577 /* RTCStates.swift */; };
+		FA36B727250D091D00549577 /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36B723250D091D00549577 /* SessionDescription.swift */; };
+		FA36B728250D091D00549577 /* IceCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36B724250D091D00549577 /* IceCandidate.swift */; };
 		FA6ED9B124F50A0B002EC942 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6ED9B024F50A0B002EC942 /* Config.swift */; };
-		FADB63AF24F6A8F2006464A3 /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63A924F6A8F2006464A3 /* WebRTCClient.swift */; };
-		FADB63B524F6AE31006464A3 /* RTCStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63B224F6AE31006464A3 /* RTCStates.swift */; };
-		FADB63B624F6AE31006464A3 /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63B324F6AE31006464A3 /* SessionDescription.swift */; };
-		FADB63B724F6AE31006464A3 /* IceCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB63B424F6AE31006464A3 /* IceCandidate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,11 +70,11 @@
 		FA20D11C24F252AF005CFFCD /* StreamingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingAppUITests.swift; sourceTree = "<group>"; };
 		FA20D11E24F252AF005CFFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA20D12C24F26CC6005CFFCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA36B720250D091D00549577 /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
+		FA36B722250D091D00549577 /* RTCStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCStates.swift; sourceTree = "<group>"; };
+		FA36B723250D091D00549577 /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDescription.swift; sourceTree = "<group>"; };
+		FA36B724250D091D00549577 /* IceCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCandidate.swift; sourceTree = "<group>"; };
 		FA6ED9B024F50A0B002EC942 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		FADB63A924F6A8F2006464A3 /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
-		FADB63B224F6AE31006464A3 /* RTCStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTCStates.swift; sourceTree = "<group>"; };
-		FADB63B324F6AE31006464A3 /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDescription.swift; sourceTree = "<group>"; };
-		FADB63B424F6AE31006464A3 /* IceCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCandidate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +153,8 @@
 		FA20D0F724F252A9005CFFCD /* StreamingApp */ = {
 			isa = PBXGroup;
 			children = (
-				FADB63B124F6AE31006464A3 /* Extensions */,
-				FADB63A324F6A8F2006464A3 /* Services */,
+				FA36B721250D091D00549577 /* Extensions */,
+				FA36B71F250D091D00549577 /* Services */,
 				FA20D12C24F26CC6005CFFCD /* GoogleService-Info.plist */,
 				FA20D0F824F252A9005CFFCD /* AppDelegate.swift */,
 				FA20D0FA24F252A9005CFFCD /* SceneDelegate.swift */,
@@ -187,24 +187,22 @@
 			path = StreamingAppUITests;
 			sourceTree = "<group>";
 		};
-		FADB63A324F6A8F2006464A3 /* Services */ = {
+		FA36B71F250D091D00549577 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FADB63A924F6A8F2006464A3 /* WebRTCClient.swift */,
+				FA36B720250D091D00549577 /* WebRTCClient.swift */,
 			);
-			name = Services;
-			path = "../../WebRTC-iOS/WebRTC-Demo-App/Sources/Services";
+			path = Services;
 			sourceTree = "<group>";
 		};
-		FADB63B124F6AE31006464A3 /* Extensions */ = {
+		FA36B721250D091D00549577 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FADB63B224F6AE31006464A3 /* RTCStates.swift */,
-				FADB63B324F6AE31006464A3 /* SessionDescription.swift */,
-				FADB63B424F6AE31006464A3 /* IceCandidate.swift */,
+				FA36B722250D091D00549577 /* RTCStates.swift */,
+				FA36B723250D091D00549577 /* SessionDescription.swift */,
+				FA36B724250D091D00549577 /* IceCandidate.swift */,
 			);
-			name = Extensions;
-			path = "../../WebRTC-iOS/WebRTC-Demo-App/Sources/Extensions";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,15 +444,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADB63AF24F6A8F2006464A3 /* WebRTCClient.swift in Sources */,
 				FA20D0FD24F252A9005CFFCD /* ViewController.swift in Sources */,
-				FADB63B524F6AE31006464A3 /* RTCStates.swift in Sources */,
 				FA20D0F924F252A9005CFFCD /* AppDelegate.swift in Sources */,
+				FA36B728250D091D00549577 /* IceCandidate.swift in Sources */,
 				FA6ED9B124F50A0B002EC942 /* Config.swift in Sources */,
-				FADB63B624F6AE31006464A3 /* SessionDescription.swift in Sources */,
-				FADB63B724F6AE31006464A3 /* IceCandidate.swift in Sources */,
+				FA36B727250D091D00549577 /* SessionDescription.swift in Sources */,
 				FA20D10224F252A9005CFFCD /* ContentView.swift in Sources */,
 				FA20D0FB24F252A9005CFFCD /* SceneDelegate.swift in Sources */,
+				FA36B726250D091D00549577 /* RTCStates.swift in Sources */,
+				FA36B725250D091D00549577 /* WebRTCClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
